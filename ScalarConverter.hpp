@@ -5,11 +5,7 @@
 #include <iostream>
 #include <string>
 #include <limits>
-#include <iomanip>
-#include <cstdlib>
-#include <cerrno>
-#include <climits>
-#include <cfloat>
+
 
 class ScalarConverter
 {

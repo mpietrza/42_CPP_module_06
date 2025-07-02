@@ -3,8 +3,11 @@
 
 #include <cmath>
 #include <iostream>
+#include <iomanip>
 #include <string>
-#include <limits>
+#include <climits>
+#include <cfloat>
+#include <cerrno>
 
 
 class ScalarConverter
@@ -16,7 +19,7 @@ class ScalarConverter
 		~ScalarConverter();
 
 	public:
-		static void convert(const std::string &literal); 
+		static void convert(const std::string &str); 
 		//Being `static` means that `convert` can be called without creating an instance of `ScalarConverter`;
 		//you can invoke it directly using the class name, like `ScalarConverter::convert("123")`.
 };

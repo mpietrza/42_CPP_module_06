@@ -6,11 +6,11 @@
 #    By: mpietrza <mpietrza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 18:29:35 by mpietrza          #+#    #+#              #
-#    Updated: 2025/04/14 18:37:38 by mpietrza         ###   ########.fr        #
+#    Updated: 2025/07/02 13:26:58 by mpietrza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = convert
 CC = c++
 CFLAGS = -Wall -Wextra -Werror #-g -O0
 STD = -std=c++98
@@ -32,7 +32,7 @@ W = "\033[37m"
 
 #SOURCES
 SRC		= main.cpp \
-		  Bureaucrat.cpp 
+		  ScalarConverter.cpp 
 		  
 OBJS	= $(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
@@ -57,19 +57,19 @@ $(DIR_OBJS):
 
 $(NAME): $(OBJS) Makefile
 	$(CC) $(CFLAGS) $(STD) $(OBJS) -o $(NAME)
-	@echo $(G)Bureaucrat compiled successfully! $(DEF_COLOR)
+	@echo $(G)ScalarConverter compiled successfully! $(DEF_COLOR)
 
 clean:
 	@echo $(GRAY)
 	$(RM) $(OBJS) $(DEPS) $(DIR_OBJS)
-	@echo $(G)Bureaucrat object files erased successfully! $(DEF_COLOR)
+	@echo $(G)ScalarConverter object files erased successfully! $(DEF_COLOR)
 
 fclean: clean
 	@echo $(GRAY)
 	$(RM) $(NAME)
-	@echo $(G)Bureaucrat executable files erased succesfully! $(DEF_COLOR)
+	@echo $(G)ScalarConverter executable files erased succesfully! $(DEF_COLOR)
 
 re: fclean all
-	@echo $(G)Erased and recompiled every file of Bureaucrat successfully! $(DEF_COLOR)
+	@echo $(G)Erased and recompiled every file of ScalarConverter successfully! $(DEF_COLOR)
 
 .PHONY: all clean fclean re

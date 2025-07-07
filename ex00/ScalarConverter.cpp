@@ -55,7 +55,7 @@ static void printImpossible() {
 
 // Helper: print conversions for char
 static void printCharConversions(char c) {
-	std::cout << "char:   '" << c << std::endl
+	std::cout << "char:   '" << c << "'" << std::endl
 			  << "int:    " << static_cast<int>(c) << std::endl
 			  << "float:  " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl
 			  << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(c) << std::endl;
@@ -95,6 +95,11 @@ void ScalarConverter::convert(const std::string &str) {
 	if (isCharLiteral(str)) {
 		printCharConversions(str[1]);
 		return ;
+	}
+	//Single printable character
+	if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0])) {
+		printCharConversions(str[0]);
+		return;
 	}
 	//Pseudo literal
 	if (isPseudoLiteral(str)) {

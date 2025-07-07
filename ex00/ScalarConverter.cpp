@@ -22,7 +22,7 @@ static bool isCharLiteral(const std::string &str) {
 //Helper: check for pseudo-literals
 static bool isPseudoLiteral(const std::string &str) {
 	if (str == "nan" || str == "+inf" || str == "-inf" ||
-		str == "nanf" || str == "+inff" || str == "+inff")
+		str == "nanf" || str == "+inff" || str == "-inff")
 		return true;
 	return false;
 }
